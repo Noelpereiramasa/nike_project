@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 60px; /* Added to prevent footer overlap */
+        }
+
+        /* Enhanced Navigation */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        nav img {
+            border-radius: 50%;
+            height: 40px;
+            width: 40px;
+            transition: transform 0.3s;
+        }
+
+        nav img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ff6347;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ff6347;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Navigation */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Card Effects */
+        .section-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2em 0;
+            padding: 2em;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Video Section */
+        .video {
+            margin-top: 20px;
+        }
+
+        .video1 {
+            width: 100%;
+            max-height: 600px;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+
+        /* Products Grid */
+        .list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+            padding: 2em;
+        }
+
+        .list img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .list img:hover {
+            transform: scale(1.05);
+        }
+
+        /* History Section */
+        .history {
+            font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            padding: 0 2em;
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #333;
+                flex-direction: column;
+                padding: 1em;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .list {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">
+            <a href=""><img src="nike.jpg" alt="Logo"></a>
+            <li>Nike</li>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="video section-card">
+            <video class="video1" src="Glowing Nike WEAR - AI COMMERCIAL.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="Home section-card">
+            <h1>There is no finish line</h1>
+            <p>At our core, we're more than just a sportswear company – we're here to inspire and empower every athlete in the world...</p>
+        </div>
+
+        <div class="list section-card">
+            <a href="https://www.nike.com/t/air-jordan-1-retro-high-og-shoes-a7Zzxm/DZ5485-612" target="_blank">
+                <img src="_Air Jordan 1s_ A Sneaker Legacy Soaring Through Time_.jpeg" alt="Air Jordan 1s">
+            </a>
+            <a href="https://www.nike.com/t/air-force-1-07-mens-shoes-5QFp5Z/CW2288-111" target="_blank">
+                <img src="120420d6-cb4a-4b40-a57a-ff0bc95ac104.jpeg" alt="Nike Air Force 1">
+            </a>
+            <a href="https://www.nike.com/t/air-force-1-07-mens-shoes-5QFp5Z/CW2288-001" target="_blank">
+                <img src="Nike - Air Force 1 - Sergi Segarra.jpeg" alt="Nike Air Force 1 Black">
+            </a>
+            <a href="https://www.nike.com/t/air-jordan-3-retro-shoes-TJf2lm/DN3707-160" target="_blank">
+                <img src="AIR JORDAN 3 RETRO “RED CEMENT UNITE”.jpeg" alt="Air Jordan 3 Retro">
+            </a>
+        </div>
+
+        <div class="history section-card">
+            <h1>History</h1>
+            <p>Nike's history is a tale of inspiration and perseverance. Founded in 1964 by Bill Bowerman and Phil Knight as Blue Ribbon Sports, the company rebranded as Nike, Inc. in 1971. The name "Nike" was inspired by the Greek goddess of victory, symbolizing the brand's commitment to excellence and triumph2.
+
+                Nike's motivational brand strategy has been a cornerstone of its success. The company has consistently focused on inspirational storytelling, often highlighting underdog stories and overcoming adversity. One of the most notable campaigns is the "Dream Crazy" video featuring Colin Kaepernick, which resonated with many for its powerful message of standing up for one's beliefs3.
+                
+                The iconic "Just Do It" slogan, launched in 1988, further reinforced Nike's brand identity, emphasizing motivation, perseverance, and athletic excellence. Over the years, Nike has partnered with numerous athletes, such as Michael Jordan, Serena Williams, and Rafael Nadal, to share their stories of determination and success3.
+                
+                Nike's ability to connect with consumers on an emotional level through its motivational campaigns has played a significant role in its enduring popularity and global influence</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Noel Adversiting Co. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
